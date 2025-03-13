@@ -401,7 +401,23 @@
                               action="{{ route('update-product-image') }}"
                               enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="id" value="{{ $products->id }}">
                             <div class="row row-sm">
+                                @if($multiImgs->isEmpty())
+                                    {{-- Якщо немає зображень, дозволяємо додати нові --}}
+                                    <div class="col-md-12 text-center">
+                                        <p class="text-warning">Зображення відсутні. Додайте нові.</p>
+                                        <input type="file"
+                                               name="multi_img[]"
+                                               class="form-control"
+                                               multiple="" id="multiImg"
+                                               required>
+                                        @error('multi_img')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                        <div class="row" id="preview_img"></div>
+                                    </div>
+                                @else
                                 @foreach($multiImgs as $img)
                                     <div class="col-md-3">
 
@@ -414,21 +430,21 @@
                                                        class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i
                                                             class="fa fa-trash"></i> </a>
                                                 </h5>
-                                                <p class="card-text">
+{{--                                                <p class="card-text">--}}
                                                 <div class="form-group">
                                                     <label class="form-control-label">Change Image <span
                                                             class="tx-danger">*</span></label>
                                                     <input class="form-control" type="file"
                                                            name="multi_img[{{ $img->id }}]">
                                                 </div>
-                                                </p>
+{{--                                                </p>--}}
 
                                             </div>
                                         </div>
 
                                     </div><!--  end col md 3		 -->
                                 @endforeach
-
+                                @endif
                             </div>
 
                             <div class="text-xs-right">

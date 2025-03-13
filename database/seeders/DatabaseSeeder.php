@@ -24,8 +24,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $categories = ['Electronics', 'Fashion', 'Books',
-            'Home Appliances', 'Toys', 'Tools',
-            'Jewelry', 'Watches', 'Accessories',
+            'Fruits', 'Toys', 'Tools',
             'Health', 'Beauty', 'Health & Beauty',
         ];
 
@@ -41,7 +40,7 @@ class DatabaseSeeder extends Seeder
         }
         SubCategory::factory(5)->create();
         SubSubCategory::factory(10)->create();
-        Product::factory(10)->create();
+        Product::factory(20)->create();
         Slider::factory(3)->create();
         Seo::factory(1)->create();
         ShipDivision::factory(5)->create();

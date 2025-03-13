@@ -16,11 +16,11 @@ class ShipDistrictFactory extends Factory
     protected $model = ShipDistrict::class;
     public function definition()
     {
-        $divisionName = $this->faker->randomElement(['Lower North shropet', 'Lower South shropet', 'Fort Neatag', 'Sluppexest Garden', 'Twaffuven Market']);
+        $districtName = $this->faker->randomElement(['Lower North shropet', 'Lower South shropet', 'Fort Neatag', 'Sluppexest Garden', 'Twaffuven Market']);
 
         return [
             'division_id'=>ShipDivision::inRandomOrder()->first()->id ?? ShipDivision::factory(),
-            'division_name'=>$divisionName[rand(0, 2)],
+            'district_name'=>$districtName[rand(0, 2)],
         ];
     }
 }

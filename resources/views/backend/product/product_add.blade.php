@@ -319,7 +319,6 @@
                                                     </div>
                                                 </div>
 
-
                                             </div> <!-- end col md 4 -->
 
                                         </div> <!-- end 6th row  -->
@@ -411,7 +410,9 @@
                                             <div class="form-group">
                                                 <h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
                                                 <div class="controls">
-                                                    <input type="file" name="digital_file" class="form-control">
+                                                    <input type="file"
+                                                           name="digital_file"
+                                                           class="form-control">
 
                                                 </div>
                                             </div>
@@ -419,7 +420,8 @@
                                         </div> <!-- end col md 4 -->
 
                                         <div class="text-xs-right">
-                                            <input type="submit" class="btn btn-rounded btn-primary mb-5"
+                                            <input type="submit"
+                                                   class="btn btn-rounded btn-primary mb-5"
                                                    value="Add Product">
                                         </div>
                                     </div>
@@ -461,7 +463,7 @@
                     var data = $(this)[0].files; //this file data
 
                     $.each(data, function (index, file) { //loop though each file
-                        if (/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)) { //check supported file type
+                        if (/(\.|\/)(gif|jpeg|png)$/i.test(file.type)) { //check supported file type
                             var fRead = new FileReader(); //new filereader
                             fRead.onload = (function (file) { //trigger function on successful read
                                 return function (e) {

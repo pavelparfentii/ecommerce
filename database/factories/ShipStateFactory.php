@@ -20,8 +20,8 @@ class ShipStateFactory extends Factory
         $stateNames = $this->faker->randomElement(['Wubleobar', 'Cathuenga', 'Tagristan', 'Costea', 'Dreastan']);
         return [
             'state_name'=>$stateNames,
-            'division_id'=>ShipDivision::all()->random()->id,
-            'district_id'=>ShipDistrict::all()->random()->id,
+            'division_id'=>ShipDivision::inRandomOrder()->first()->id ?? ShipDivision::factory(),
+            'district_id'=>ShipDistrict::inRandomOrder()->first()->id ?? ShipDistrict::factory(),
         ];
     }
 }

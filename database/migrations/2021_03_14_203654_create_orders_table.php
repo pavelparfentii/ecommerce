@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method')->nullable();
             $table->string('transaction_id')->nullable();
             $table->string('currency');
-            $table->float('amount',8,2);  
+            $table->float('amount',8,2);
             $table->string('order_number')->nullable();
             $table->string('invoice_no');
             $table->string('order_date');
@@ -40,11 +40,12 @@ class CreateOrdersTable extends Migration
             $table->string('shipped_date')->nullable();
             $table->string('delivered_date')->nullable();
             $table->string('cancel_date')->nullable();
+            $table->integer('return_order')->default(0);
             $table->string('return_date')->nullable();
             $table->string('return_reason')->nullable();
             $table->string('status');
             $table->timestamps();
-        }); 
+        });
     }
 
     /**

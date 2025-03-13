@@ -28,7 +28,9 @@ class ProductFactory extends Factory
             'Kitchen Blender', 'LEGO Set', 'T-Shirt',  'Belt',
             'Laptops', 'Gadgets', 'Sony Samsung',
             'Accessories', 'Bowl', 'Plate', 'Furniture', 'Package',
-            'Combo', 'Women', 'Men'
+            'Combo', 'Women', 'Men', 'Jewelry', 'Electronic',
+            'Other', 'Cats', 'Table', 'Chair', 'Sofa', 'Pencil', 'Pen',
+            'Apple', 'Fruit', 'Comix Book'
         ]);
 
         return [
